@@ -1,7 +1,7 @@
 <?php
-include "classes/autoload.php";
-
-class textExporter extends exporter{
+ 
+class textExporter extends exporter 
+{ 
     protected $format= ".txt";
 
     public  function export($name){
@@ -11,4 +11,3 @@ class textExporter extends exporter{
      }
 
 }
- 

@@ -1,16 +1,18 @@
 <?php
-   include "./vendor/autoload.php";
-class pdfExporter{
-    protected $format= ".pdf";
 
-    public  function export(){
+class pdfExporter extends exporter
+{
+    protected $format = ".pdf";
+
+    public function export($name)
+    {
+        require_once "vendor/autoload.php";
         $mpdf = new \Mpdf\Mpdf();
-        $mpdf->WriteHTML('<h1>Hello world!</h1>');
-$mpdf->Output();
-      }
-
+        // title
+        $mpdf->SetHTMLHeader($this->data['title']);
+        // content
+        $mpdf->WriteHTML($this->data['content']);
+        // Output a PDF file directly to the browser
+        $mpdf->Output($name . '.pdf', 'D');
+    }
 }
-$pdf=new pdfExporter();
-$pdf->export();
-
- 

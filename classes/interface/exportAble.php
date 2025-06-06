@@ -1,5 +1,6 @@
 <?php
 
-interface exportAble{
-    public  function export($name);
+interface exportAble
+{
+    public function export($name);
 }
