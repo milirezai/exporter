@@ -9,6 +9,5 @@ if (in_array($format, $whiteList)) {
         $export = new $className(['title' => $title, 'content' => $content]);
         $export->export($title);
     }
-} else {
-    die('error');
-}
+} 
+ 
